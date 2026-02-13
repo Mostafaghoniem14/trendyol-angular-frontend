@@ -1,0 +1,39 @@
+<div class="container my-4" style="border: 1px rgb(195, 195, 195) solid;">
+    <div class="row">
+        <div class="content col-md-3 p-3">
+            <p style="color: darkgoldenrod;" class="">SPONSORED BY SAINT LAURENT</p>
+            <h2>Saint Laurent</h2>
+            <p class="text-muted">Explore the collection</p>
+            <a href="https://www.mytheresa.com/int/en/women/designers/saint-laurent?utm_source=sea_nb&utm_medium=bing&msclkid=e3d5da54dad8109042cdb3707e587496&chn=sea_nonbrand&src=bing&cmp=MS_Womenswear_Int_en&campaignid=446106499&tarea=row&tar=kwd-72293686146774%3Aloc-187&ag=Saint+Laurent_Womenswear_Pure_en&adgroupid=1156687422375490&kwd=saint+laurent&ptyp=72293358814019&msclkid=e3d5da54dad8109042cdb3707e587496%3AG%3As&gclid=e3d5da54dad8109042cdb3707e587496&gclsrc=3p.ds&slink_id=68ecd3f1-b4ce-45b7-b845-eccfda78c2f0"><button style="background-color: white; border-radius: 5px; border-width: 0.5px;" class="shop mt-4 p-2">Shop Now</button></a>
+        </div>
+        <div class="background col-md-9">
+            <img style="height: 100%;" class="w-100" src="images/log3.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1 class="my-5">Designer Shoes for Men & Women</h1>
+    <div class="row">
+        @for (p of products3; track $index) {
+            <div class="card gy-3 bg-body-tertiary col-md-3">
+            <img style="height: 450px;"  [src]="p.images" class="d-block w-100 p-2" alt="...">
+            <div class="cardcontent p-2">
+                <div style="display: flex;">
+
+                    <div class="me-2" style="text-decoration: line-through;font-size: larger;">${{p.price + 300}}</div>
+                    <h4 style="color: darkred;">${{p.price}}</h4>
+                </div>
+                <h4 class="text-muted">{{p.brand}}</h4>
+                <p class="text-muted">{{p.name}} </p>
+                <p style="color: darkgoldenrod;">Sale</p>
+                <div class="text-center">
+                    <button style="border-radius: 20px;border-color: darkgreen; color: white;" class="btn p-2 bg-success">ADD TO CART 📦</button>
+                </div>
+
+            </div>
+        </div>
+        }
+        
+    </div>
+    
+</div>

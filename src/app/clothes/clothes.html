@@ -1,0 +1,72 @@
+<div class="container my-4" style="border: 1px rgb(195, 195, 195) solid;">
+    <div class="row">
+        <div class="content col-md-3 p-3">
+            <p style="color: darkgoldenrod;" class="">SPONSORED BY LEVEL SHOES</p>
+            <h2>Level Shoes</h2>
+            <p class="text-muted">Styles That Move You</p>
+            <a href="https://www.levelshoes.com/"><button style="background-color: white; border-radius: 5px; border-width: 0.5px;" class="shop mt-4 p-2">Shop Now</button></a>
+        </div>
+        <div class="background col-md-9">
+            <img src="images/levelshoes-68409641-f2e4-4164-a157-fe2cdddd15f0.o.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1 class="my-5">Designer Clothing for Women</h1>
+    <div class="row">
+        @for (p of products1; track $index) {
+            <div class="card bg-body-tertiary col-md-4">  <!--property binding-->
+            <img style="height: 400px;"  [src]="p.image" class="d-block w-100 p-2" alt="...">
+            <div class="cardcontent p-2">
+                <div style="display: flex;">
+
+                    <div class="me-2" style="text-decoration: line-through;font-size: larger;">${{p.price + 300}}</div>
+                    <h4 style="color: darkred;">${{p.price}}</h4>  <!--text interpolation-->
+                </div>
+                <h4 class="text-muted">{{p.brand}}</h4>
+                <p class="text-muted">{{p.name}} </p>
+                <p class="text-muted">{{p.link}}</p>
+                <p style="color: darkgoldenrod;">Sale</p>
+                <div class="text-center">
+                    <button style="border-radius: 20px;border-color: darkgreen; color: white;" class="btn p-2 bg-success">ADD TO CART 📦</button>
+                </div>
+            </div>
+        </div>
+        }
+        
+    </div>
+    
+</div>
+@defer (on timer(5s)) {
+    <div class="container">
+    <h1 class="my-5">Designer Clothing for Men</h1>
+    <div class="row">
+        @for (p of products2; track $index) {
+            <div class="card bg-body-tertiary col-md-4">
+                <img [src]="p.image" alt="">
+            <!-- <img style="height: 400px;"  [src]="p.image" class="d-block w-100 p-2" alt="..."> -->
+            <div class="cardcontent p-2">
+                <div style="display: flex;">
+
+                    <div class="me-2" style="text-decoration: line-through;font-size: larger;">${{p.price + 300}}</div>
+                    <h4 style="color: darkred;">${{p.price}}</h4>
+                </div>
+                <h4 class="text-muted">{{p.brand}}</h4>
+                <p class="text-muted">{{p.name}} </p>
+                <p class="text-muted">{{p.link}}</p>
+                <p style="color: darkgoldenrod;">Sale</p>
+                <div class="text-center">
+                    <button style="border-radius: 20px;border-color: darkgreen; color: white;" class="btn p-2 bg-success">ADD TO CART 📦</button>
+                </div>
+            </div>
+        </div>
+        }
+        
+    </div>
+    
+</div>
+}@placeholder {
+    <div class="text-center">
+        <span class="spinner-border"></span>
+    </div>
+}

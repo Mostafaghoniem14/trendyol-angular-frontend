@@ -1,0 +1,12 @@
+.btn{
+    transition-duration: 1s;
+}
+.btn:hover{
+    transform: scale(1.04);
+}
+.shop:hover{
+    transition-duration: 0.4s;
+    transform: scale(1.03) !important;
+    background-color: black !important;
+    color: white;
+}
